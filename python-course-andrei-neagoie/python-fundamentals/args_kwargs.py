@@ -1,5 +1,5 @@
-# arguments and keyword_arguments
-# *args will collect all the non-named arguments, in the tuple, and **kwargs will collect all the name arguments in a dictionary
+# arguments and keyword_arguments *args will collect all the non-named arguments, in the tuple, and **kwargs will
+# collect all the name arguments in a dictionary
 def super_func(*args, **kwargs):
     print(args)
     print(kwargs)
