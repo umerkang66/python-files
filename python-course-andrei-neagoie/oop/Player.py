@@ -1,13 +1,17 @@
 class PlayerCharacter:
     membership = True
 
-    def __init__(self, name, age):
+    def __init__(self, name, birthYear):
         if self.membership:
-            self.name = name
-            self.age = age
+            self._name = name
+            self._birthYear = birthYear
 
-    def get_age(self, currentYear):
-        return currentYear - self.age
+    def _get_age(self, currentYear):
+        return currentYear - self._birthYear
+
+    def speak(self):
+        print(
+            f"My name is {self._name}, and I am {self._get_age(2022)} years old")
 
     # we can use class state when we want to use class state
     @classmethod
@@ -25,7 +29,11 @@ class PlayerCharacter:
         return sum
 
 
-umer = PlayerCharacter.adding_things(12, 9)
-print(umer.age)
+umer = PlayerCharacter.adding_things(2000, 1)
+umer.speak()
 
 print(PlayerCharacter.adding_things2(23, 12, 12, 32, 23))
+
+# Multiple methods are added into class, this is called encapsulation
+
+# By adding methods we can abstract away the implementation details
