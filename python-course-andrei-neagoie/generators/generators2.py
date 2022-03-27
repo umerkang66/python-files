@@ -11,6 +11,7 @@ def special_for(iterable):
 
 special_for([1, 2, 3])
 
+print('--------')
 
 # create our own generator, this is range() work under the hood
 class MyGen():
@@ -34,6 +35,6 @@ class MyGen():
         raise StopIteration
 
 
-gen = MyGen(0, 100)
+gen = MyGen(0, 10)
 for i in gen:
     print(i)
