@@ -23,5 +23,3 @@ def start_game():
     random_end = int(sys.argv[2])
     answer = randint(random_start, random_end)
     check_answer(answer, random_start, random_end)
-
-
