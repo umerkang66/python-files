@@ -1,10 +1,43 @@
-from flask import Flask
+import csv
+from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello_world():
-    return "<h1 style='font-family: JetBrains Mono, sans-serif'>Hello, Umer Kang</h1>"
+def write_to_file(data):
+    with open("db.txt", mode='a') as db:
+        email = data["email"]
+        subject = data["subject"]
+        message = data["message"]
+        db.write(f"\n{email},{subject},{message}")
 
-# $env:FLASK_APP = "hello" # tell flask which is the main server file
-# then run "python -m flask run" or "flask run"
+
+def write_to_csv(data):
+    with open("db.csv", mode='a') as db:
+        email = data["email"]
+        subject = data["subject"]
+        message = data["message"]
+        # first argument is where to write this file
+        csv_writer = csv.writer(
+            db, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
+        )
+        csv_writer.writerow([email, subject, message])
+
+
+@app.route("/submit_form", methods=["POST", "GET"])
+def submit_form():
+    if request.method == 'POST':
+        data = request.form.to_dict()
+        write_to_csv(data)
+        return redirect("thank_you.html")
+    else:
+        return render_template("error_page.html", error_msg="Form request failed")
+
+
+@app.route("/")
+def get_home():
+    return render_template("index.html")
+
+
+@app.route("/<string:page_name>")
+def get_page(page_name):
+    return render_template(page_name)
