@@ -50,4 +50,6 @@ def get_page(page_name):
     return render_template(page_name)
 
 
+# python -m venv {{virtual_env_name (venv)}}
 # pip freeze > requirements.txt
+# pip install -r requirements.txt
