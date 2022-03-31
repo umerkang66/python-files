@@ -23,6 +23,7 @@ numberOfTweets = 2
 def limit_handle(cursor):
     while True:
         try:
+            # we can call cursur.next because cursor itself it a generator (we can loop over cursor), by yielding cursor.next in a while loop, we are making this limit_handle generator also (loopable)
             yield cursor.next()
         except tweepy.RateLimitError:
             time.sleep(1000)
