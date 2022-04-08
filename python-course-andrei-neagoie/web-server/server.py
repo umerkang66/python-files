@@ -1,7 +1,6 @@
 import csv
 from flask import Flask, render_template, request, redirect
 
-
 app = Flask(__name__)
 
 
@@ -49,7 +48,9 @@ def get_home():
 def get_page(page_name):
     return render_template(page_name)
 
-
 # python -m venv {{virtual_env_name (venv)}}
 # pip freeze > requirements.txt
 # pip install -r requirements.txt
+# set FLASK_APP=hello.py
+# set FLASK_ENV=development
+# flask run
