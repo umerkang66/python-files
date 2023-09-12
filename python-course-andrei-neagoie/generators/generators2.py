@@ -1,6 +1,7 @@
 def special_for(iterable):
     # this "iter" function is going to allow us to use the next function
     iterator = iter(iterable)
+    # this iterator will work like generator that will yield value
     while True:
         try:
             print(next(iterator))
@@ -11,14 +12,15 @@ def special_for(iterable):
 
 special_for([1, 2, 3])
 
-print('--------')
+print("--------")
+
 
 # create our own generator, this is range() work under the hood
-class MyGen():
+class MyRangeGen:
     current = 0
 
     def __init__(self, first, last):
-        self.first = first
+        self.current = first
         self.last = last
 
     # we are able to use the for loop because this is now an iterable, and next dunder method is also defined, which is by default is not defined in normal class (that is only defined in iterables like list)
@@ -35,6 +37,6 @@ class MyGen():
         raise StopIteration
 
 
-gen = MyGen(0, 10)
+gen = MyRangeGen(0, 10)
 for i in gen:
     print(i)

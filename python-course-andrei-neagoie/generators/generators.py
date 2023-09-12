@@ -1,5 +1,6 @@
 # generators are iterable, but not every iterable is generator, like range() is generator, it create the range between 2 numbers, 1 by 1
 
+
 # by using the yield keyword it becomes the generator
 def generator_function(num):
     for i in range(num):

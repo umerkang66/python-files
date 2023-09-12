@@ -1,14 +1,11 @@
 def fib(number):
-    prev_num = 0
-    next_num = 1
+    prev = 0
+    next = 1
     for _ in range(number):
-        # by adding yield this will become generator
-        yield prev_num
-        temp = prev_num
-        # previous number will become next number where loop in ended
-        prev_num = next_num
-        # next num will sum of two numbers (one own its own) and will become the next one
-        next_num = temp + next_num
+        yield prev
+        temp = prev
+        prev = next
+        next = temp + next
 
 
 # by using generators, we are not keeping anything in the memory
