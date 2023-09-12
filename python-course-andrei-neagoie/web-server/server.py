@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 def write_to_txt(data):
-    with open("db.txt", mode='a') as db:
+    with open("db.txt", mode="a") as db:
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
@@ -13,22 +13,20 @@ def write_to_txt(data):
 
 
 def write_to_csv(data):
-    with open('db.csv', newline='', mode='a') as db:
+    with open("db.csv", newline="", mode="a") as db:
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
         # first argument is where to write this file
         csv_writer = csv.writer(
-            db, delimiter=",",
-            quotechar='"',
-            quoting=csv.QUOTE_MINIMAL
+            db, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
         )
         csv_writer.writerow([email, subject, message])
 
 
 @app.route("/submit_form", methods=["POST", "GET"])
 def submit_form():
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
             data = request.form.to_dict()
             write_to_csv(data)
@@ -47,6 +45,7 @@ def get_home():
 @app.route("/<string:page_name>")
 def get_page(page_name):
     return render_template(page_name)
+
 
 # python -m venv {{virtual_env_name (venv)}}
 # pip freeze > requirements.txt

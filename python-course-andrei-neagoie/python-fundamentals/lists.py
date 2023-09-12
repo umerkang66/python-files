@@ -1,9 +1,9 @@
 cart = ["notebook", "sunglasses", "toys", "grapes", "second_index"]
 
 # The last option is to skip the elements between the list, by slicing original list does not change, it returns the copy of original string
-print(cart[0:len(cart):2])
+print(cart[0 : len(cart) : 2])
 
-# Lists are immutable
+# Lists are mutable
 cart[0] = "umer"
 
 cart.append("umer")
@@ -27,7 +27,7 @@ for num in list_100:
     list_100[num - 1] = str(num)
 
 # Joining the string with list
-number_strings = ' '.join(list_100)
+number_strings = "-".join(list_100)
 print(number_strings)
 
 # List unpacking (just like js destructuring)

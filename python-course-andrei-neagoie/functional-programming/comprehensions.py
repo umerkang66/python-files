@@ -1,7 +1,7 @@
 # list comprehensions
 # my_list = [param for param in iterable]
 
-my_list = [char.upper() for char in 'umerkang' if char > "k"]
+my_list = [char.upper() for char in "umerkang" if char > "k"]
 print(my_list)
 
 nums_list = [num * 2 for num in range(0, 10)]
@@ -18,17 +18,13 @@ my_dict = {key: value for key, value in person_list}
 print(my_dict)
 
 
-person = {
-    'name': 'umer',
-    'age': 20,
-    'course': 'computer science'
-}
+person = {"name": "umer", "age": 20, "course": "computer science"}
 
 person_dict = {key: value for key, value in person.items()}
 
 print(person_dict)
 
-nums_dict = {num: num ** 2 for num in [101, 102, 103, 104]}
+nums_dict = {num: num**2 for num in [101, 102, 103, 104]}
 print(nums_dict)
 
 # set comprehensions

@@ -10,8 +10,7 @@ class PlayerCharacter:
         return currentYear - self._birthYear
 
     def speak(self):
-        print(
-            f"My name is {self._name}, and I am {self._get_age(2022)} years old")
+        print(f"My name is {self._name}, and I am {self._get_age(2022)} years old")
 
     # we can use class state when we want to use class state
     @classmethod

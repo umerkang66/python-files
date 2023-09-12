@@ -2,10 +2,12 @@
 for index, char in enumerate("umerkang"):
     print(f"At index: {index} char is --> {char}")
 
+
 # this also works on lists and tuples
 nums = [34, 35, 36, 37, 38, 39, 40]
 for index, element in enumerate(nums):
-    print(f"At index: {index} element is --> {element}")
+    print(f"At index: {index} list element is --> {element}")
+
 
 nums_tuple = (34, 35, 36, 37, 38, 39, 40)
 for index, element in enumerate(nums_tuple):

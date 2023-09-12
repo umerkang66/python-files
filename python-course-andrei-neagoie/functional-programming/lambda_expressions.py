@@ -15,7 +15,7 @@ print(reduced_num)
 
 list4 = [5, 4, 3]
 
-square_list4 = list(map(lambda num: num ** 2, list4))
+square_list4 = list(map(lambda num: num**2, list4))
 print(square_list4)
 
 

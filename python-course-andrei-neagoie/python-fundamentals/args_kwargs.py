@@ -18,9 +18,7 @@ def super_func2(firstname, *args, default_param="hi", **kwargs):
     print(kwargs)
 
 
-super_func2(
-    "umer", 1, 2, 3, 4, 5, name="umer", age=20, course="computer science"
-)
+super_func2("umer", 1, 2, 3, 4, 5, name="umer", age=20, course="computer science")
 
 
 def highest_even(*args):

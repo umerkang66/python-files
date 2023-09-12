@@ -4,7 +4,7 @@ class User:
         self.age = age
 
     def sign_in(self):
-        print(f"\"{self.firstname}\", with age \"{self.age}\", is singed in")
+        print(f'"{self.firstname}", with age "{self.age}", is singed in')
 
 
 class Wizard(User):

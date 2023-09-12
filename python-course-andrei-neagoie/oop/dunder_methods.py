@@ -1,10 +1,10 @@
-class Toy():
+class Toy:
     def __init__(self, color, age):
         self.color = color
         self.age = age
         self.my_dict = {
-            'name': 'Yo yo',
-            'has_pets': False,
+            "name": "Yo yo",
+            "has_pets": False,
         }
 
     def __str__(self):
@@ -17,15 +17,15 @@ class Toy():
         return "deleted"
 
     def __call__(self):
-        return('yes??')
+        return "yes??"
 
-    def __getitem__(self, i):
-        return self.my_dict[i]
+    def __getitem__(self, item):
+        return self.my_dict[item]
 
 
-action_figure = Toy('red', 0)
+action_figure = Toy("red", 0)
 print(action_figure.__str__())
 print(str(action_figure))
 print(len(action_figure))
 print(action_figure())
-print(action_figure['name'])
+print(action_figure["name"])

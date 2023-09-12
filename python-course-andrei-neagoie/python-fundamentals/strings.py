@@ -30,7 +30,10 @@ print(name.upper())
 print(name.capitalize())
 
 # returns the starting from where it starts
-print(name.find('is'))
+print(name.find("is"))
 
 # this replaces all the occurrences of "is", and returns the new string, don't mutate the original string
-print(name.replace('is', 'are'))
+print(name.replace("is", "are"))
+
+name = "umer is my name"
+print(name[::-1])
