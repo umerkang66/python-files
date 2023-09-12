@@ -25,8 +25,9 @@ print(even_nums)
 # zip
 your_list = [10, 20, 30, 40]
 
-# this will zip items at the same index together, if the one of the list of tuple doesn't have anything at the current_index of first tuple or list, then that simply will not be added
-print(list(zip(nums_list, your_list)))
+# this will zip items at the same index together, length of the list (created by list)
+# will be the length of shorter list of the two
+print("🚀🚀🚀", list(zip(nums_list, your_list)))
 
 # reduce
 nums2 = [1, 2, 3]
