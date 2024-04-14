@@ -1,12 +1,13 @@
 # python -m venv venv
 # pip freeze > requirements.txt
 # python.exe -m pip install --upgrade pip
-# $env:PIPENV_VENV_IN_PROJECT=1
+# export PIPENV_VENV_IN_PROJECT=1
 # uvicorn main:app --reload
 
 from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
+
 
 app = FastAPI()
 
@@ -26,9 +27,7 @@ def get_user_info() -> tuple[str, str]:
 @app.get("/user/me", response_model=User)
 def me():
     username, short_description = get_user_info()
-
     user = User(
         username=username, short_description=short_description, liked_posts=[1, 2, 3]
     )
-
     return user
